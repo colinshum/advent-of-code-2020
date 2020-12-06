@@ -1,24 +1,8 @@
 def p1(li):
-  ml = 0
-
-  for x in li:
-    a = x.split(" ")
-    b = set(''.join(set(a)))
-    ml += len(b)
-
-  return ml
-
+  return sum([len(set(''.join(set(x.split(" "))))) for x in li])
 
 def p2(li):
-  ml = 0
-
-  for x in li:
-    a = x.split(" ")
-    b = [set(i) for i in a]
-    c = set.intersection(*b)
-    ml += len(c)
-
-  return ml
+  return sum([len(set.intersection(*[set(i) for i in x.split(" ")])) for x in li])
 
 
 if __name__ == "__main__":
